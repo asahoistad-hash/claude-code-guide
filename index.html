@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Så fungerar Claude Code</title>
+  <meta name="description" content="En enkel introduktion till hur Claude Code fungerar.">
+  <style>
+    :root {
+      --bg: #faf9f5;
+      --fg: #1f1e1d;
+      --muted: #6b6a68;
+      --accent: #c15f3c;
+      --card: #ffffff;
+      --border: #e6e3dc;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1c1b19;
+        --fg: #f0eee6;
+        --muted: #a8a59d;
+        --accent: #e08a68;
+        --card: #262522;
+        --border: #3a3834;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    main { max-width: 720px; margin: 0 auto; padding: 48px 16px 64px; }
+    h1 { font-size: 2.2rem; line-height: 1.2; margin: 0 0 12px; }
+    h2 { font-size: 1.3rem; margin: 40px 0 12px; }
+    p { margin: 0 0 12px; }
+    .lead { color: var(--muted); font-size: 1.15rem; }
+    .steps { display: grid; gap: 12px; padding: 0; list-style: none; counter-reset: s; }
+    .steps li {
+      counter-increment: s;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 16px 16px 56px;
+      position: relative;
+    }
+    .steps li::before {
+      content: counter(s);
+      position: absolute; left: 16px; top: 16px;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--accent); color: #fff;
+      display: grid; place-items: center; font-weight: 600; font-size: 0.9rem;
+    }
+    .steps strong { display: block; }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92rem;
+    }
+    code { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 1px 6px; }
+    pre {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; padding: 14px 16px; overflow-x: auto;
+    }
+    pre code { border: 0; padding: 0; background: none; }
+    footer { margin-top: 48px; color: var(--muted); font-size: 0.9rem; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Så fungerar Claude Code</h1>
+    <p class="lead">Claude Code är en AI-assistent som arbetar direkt i din projektmapp: den läser filer, skriver kod och kör kommandon, och du styr det hela med vanlig text.</p>
+
+    <h2>Så funkar det i fyra steg</h2>
+    <ol class="steps">
+      <li><strong>Du beskriver vad du vill</strong>Skriv på vanlig svenska eller engelska, till exempel "gör en enkel hemsida om mitt projekt".</li>
+      <li><strong>Claude utforskar och planerar</strong>Den läser relevanta filer i mappen och bestämmer vilka steg som behövs.</li>
+      <li><strong>Claude gör ändringarna</strong>Den skapar och redigerar filer och kör kommandon, till exempel tester eller git.</li>
+      <li><strong>Du granskar och styr</strong>Du godkänner eller nekar åtgärder och kan alltid be om ändringar.</li>
+    </ol>
+
+    <h2>Du behåller kontrollen</h2>
+    <p>Claude Code frågar om lov innan den gör något känsligt, som att köra kommandon eller ändra filer. Du bestämmer hur mycket den får göra på egen hand.</p>
+
+    <h2>Bra att känna till</h2>
+    <p><strong>CLAUDE.md</strong> är en fil där du skriver instruktioner som Claude läser varje gång, till exempel hur projektet är uppbyggt.</p>
+    <p><strong>Skills och verktyg</strong> låter Claude göra mer, som att bläddra på webben eller ansluta till andra tjänster.</p>
+    <p><strong>Git</strong> fungerar bra tillsammans med Claude Code: du kan spara varje steg och alltid backa.</p>
+
+    <h2>Kom igång</h2>
+    <p>Installera och starta i valfri projektmapp:</p>
+<pre><code>cd mitt-projekt
+claude</code></pre>
+    <p>Läs mer i den <a href="https://docs.claude.com/en/docs/claude-code/overview">officiella dokumentationen</a>.</p>
+
+    <footer>Min första hemsida, skapad med Claude Code.</footer>
+  </main>
+</body>
+</html>
